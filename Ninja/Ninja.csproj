@@ -43,10 +43,9 @@
   <ItemGroup>
     <Compile Include="Intefaces\INinja.cs" />
     <Compile Include="Intefaces\ISuperNinja.cs" />
-    <Compile Include="Intefaces\ISuperWeapon.cs" />
     <Compile Include="Intefaces\IWeapon.cs" />
-    <Compile Include="Model\Ninja.cs" />
-    <Compile Include="Model\SuperNinja.cs" />
+    <Compile Include="Model\Character\Ninja.cs" />
+    <Compile Include="Model\Character\SuperNinja.cs" />
     <Compile Include="Model\Weapon\EmptyHands.cs" />
     <Compile Include="Model\Weapon\Katana.cs" />
     <Compile Include="Model\Weapon\Shuriken.cs" />

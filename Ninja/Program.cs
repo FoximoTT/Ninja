@@ -19,13 +19,8 @@ namespace Ninja
 
             ISuperNinja superNinja = new Model.SuperNinja();
             superNinja.SuperAttack();
-
-            superNinja.ChangeWeapon(new Katana() as ISuperWeapon);
+            superNinja.ChangeWeapon(new Katana());
             superNinja.SuperAttack();
-
-            superNinja.ChangeWeapon(new Shuriken()as ISuperWeapon);
-            superNinja.SuperAttack();
-
         }
     }
 }
