@@ -1,4 +1,6 @@
-﻿namespace Ninja.Intefaces
+﻿using System;
+
+namespace Ninja.Intefaces
 {
     public interface IWeapon
     {

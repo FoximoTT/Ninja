@@ -1,7 +1,7 @@
-﻿namespace Ninja.Intefaces 
+﻿namespace Ninja.Intefaces
 {
-    interface ISuperNinja : INinja
-    { 
+    public interface ISuperNinja : INinja
+    {
         void SuperAttack();
     }
 }

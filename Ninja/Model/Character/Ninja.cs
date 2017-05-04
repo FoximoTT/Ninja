@@ -1,31 +1,52 @@
-﻿using Ninja.Intefaces;
+﻿using System;
+using Ninja.Intefaces;
 using Ninja.Model.Weapon;
+using Ninja.State;
 
 namespace Ninja.Model
 {
     public class Ninja : INinja
     {
-        public IWeapon currentWeapon;
+        private IWeapon currentWeapon;
+        private IState state;
 
         public Ninja()
         {
-            //Better. Might add some validation logic latter, like weight limits...
+            Wake();
             ChangeWeapon(new EmptyHands());
         }
 
         public void ChangeWeapon(IWeapon weapon)
         {
-            currentWeapon = weapon;
+            state.ChangeWeapon(weapon);
+        }
+
+        public IWeapon CurrentWeapon
+        {
+            get { return currentWeapon; }
+            set { currentWeapon = value; }
         }
 
         public void DeliberateAttack()
         {
-            currentWeapon.DeliberateAttack();
+            state.DeliberateAttack();
         }
 
         public void SwiftAttack()
         {
-            currentWeapon.SwiftAttack();
+            state.SwiftAttack();
+        }
+
+        public void Rest()
+        {
+            Console.WriteLine("Resting");
+            state = new RestState(this);
+        }
+
+        public void Wake()
+        {
+            Console.WriteLine("Standby");
+            state = new StandbyState(this);
         }
     }
 }
