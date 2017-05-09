@@ -1,9 +1,5 @@
 ﻿using Ninja.Intefaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ninja.State
 {
@@ -14,22 +10,11 @@ namespace Ninja.State
         public StandbyState(INinja ninja)
         {
             this.ninja = ninja;
+            ninja.ActionQueue.ExecuteActions();
         }
 
         // IState implementation
         // ---------------------------------------
-
-        //// may be a better way of implementing states than now...?
-        public void EnterState(IState state)
-        {
-            throw new NotImplementedException();
-        }
-
-        // may be a better way of implementing states than now...?
-        public void ExitState()
-        {
-            throw new NotImplementedException();
-        }
 
         public void ChangeWeapon(IWeapon weapon)
         {
@@ -38,28 +23,31 @@ namespace Ninja.State
 
         public void DeliberateAttack()
         {
+            Console.Write($"{ ninja.Name } | ");
             ninja.CurrentWeapon.DeliberateAttack();
         }
 
         public void SwiftAttack()
         {
+            Console.Write($"{ ninja.Name } | ");
             ninja.CurrentWeapon.SwiftAttack();
         }
 
         public void Rest()
         {
-            ninja.Rest();
+            Console.WriteLine($"{ ninja.Name } | Resting");
+            ninja.State = new RestState(ninja);
         }
 
         public void Wake()
         {
-            Console.WriteLine("Standby is active already.");
+            Console.WriteLine($"{ ninja.Name } | Standby is active already.");
         }
 
         public void DeadlyAttack()
         {
+            Console.Write($"{ ninja.Name } | ");
             ninja.CurrentWeapon.DeadlyAttack();
         }
-
     }
 }

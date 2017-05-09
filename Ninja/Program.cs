@@ -8,7 +8,7 @@ namespace Ninja
     {
         public static void Main(string[] args)
         {
-            INinja ninja = new Model.Ninja();
+            INinja ninja = new Model.Ninja("Akeno");
 
             ninja.ChangeWeapon(new Katana());
             ninja.DeliberateAttack();
@@ -18,18 +18,17 @@ namespace Ninja
             ninja.DeliberateAttack();
             ninja.SwiftAttack();
 
-            IMasterNinja superNinja = new Model.MasterNinja();
-            superNinja.DeadlyAttack();
-            superNinja.ChangeWeapon(new Katana());
-            superNinja.DeadlyAttack();
+            Console.WriteLine();
+            IMasterNinja masterNinja = new Model.MasterNinja("Mikasa");
+            masterNinja.DeadlyAttack();
+            masterNinja.ChangeWeapon(new Katana());
+            masterNinja.DeadlyAttack();
 
-            Console.WriteLine("");
-            Console.WriteLine("DeadlyAttack test");
-            superNinja.Rest();
-            superNinja.DeadlyAttack();
-            superNinja.SwiftAttack();
-            superNinja.Wake();
-            superNinja.DeadlyAttack();
+            masterNinja.Rest();
+            masterNinja.DeadlyAttack();
+            masterNinja.SwiftAttack();
+            masterNinja.Wake();
+            masterNinja.DeadlyAttack();
         }
     }
 }

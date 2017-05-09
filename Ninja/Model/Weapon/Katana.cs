@@ -7,17 +7,17 @@ namespace Ninja.Model.Weapon
     {
         public void DeliberateAttack()
         {
-            Console.WriteLine("Katana - DeliberateAttack");
+            Console.WriteLine("Katana -> DeliberateAttack");
         }
 
         public void SwiftAttack()
         {
-            Console.WriteLine("Katana - SwiftAttack");
+            Console.WriteLine("Katana -> SwiftAttack");
         }
 
         public void DeadlyAttack()
         {
-            Console.WriteLine("Katana - DeadlyAttack");
+            Console.WriteLine("Katana -> DeadlyAttack");
         }
     }
 }

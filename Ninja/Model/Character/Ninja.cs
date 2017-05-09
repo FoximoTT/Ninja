@@ -10,7 +10,8 @@ namespace Ninja.Model
     {
         private IWeapon currentWeapon;
         private IState state;
-        public IActionQueue actionQueue;
+        private string name;
+        private IActionQueue actionQueue;
 
         public IWeapon CurrentWeapon
         {
@@ -24,11 +25,25 @@ namespace Ninja.Model
             set { actionQueue = value; }
         }
 
-        public Ninja()
+        public string Name
         {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public IState State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+
+        public Ninja(string name)
+        {
+            Name = name;
             actionQueue = new ActionQueue();
-            Wake();
+            state = new StandbyState(this);
             ChangeWeapon(new Fists());
+            Console.WriteLine($"Ninja { name } intialized.");
         }
 
         public void ChangeWeapon(IWeapon weapon)
@@ -48,23 +63,12 @@ namespace Ninja.Model
 
         public void Rest()
         {
-            Console.WriteLine("Resting");
-            state = new RestState(this);
+            state.Rest();
         }
 
         public void Wake()
         {
-            Console.WriteLine("Standby");
-            state = new StandbyState(this);
-            ProcessActionQueue();
-        }
-
-        private void ProcessActionQueue()
-        {
-            while (ActionQueue.ContainsActions())
-            {
-                ActionQueue.Execute();
-            }
+            state.Rest();
         }
     }
 }

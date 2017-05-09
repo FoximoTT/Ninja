@@ -1,9 +1,5 @@
 ﻿using Ninja.Intefaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ninja.State
 {
@@ -19,48 +15,37 @@ namespace Ninja.State
         // IState implementation
         // ---------------------------------------
 
-        //// may be a better way of implementing states than now...?
-        public void EnterState(IState state)
-        {
-            throw new NotImplementedException();
-        }
-
-        //// may be a better way of implementing states than now...?
-        public void ExitState()
-        {
-            throw new NotImplementedException();
-        }
-
         public void ChangeWeapon(IWeapon weapon)
         {
-            Console.WriteLine("Cannot ChangeWeapon while resting!");
+            Console.WriteLine($"{ ninja.Name } | Cannot ChangeWeapon while resting!");
         }
 
         public void DeliberateAttack()
         {
-            Console.WriteLine("Cannot DeliberateAttack while resting!");
+            Console.WriteLine($"{ ninja.Name } | Cannot DeliberateAttack while resting!");
         }
 
         public void SwiftAttack()
         {
-            Console.WriteLine("Swiftattack while resting -> waking up to attack!");
-            ninja.ActionQueue.Add(() => ninja.SwiftAttack());
+            Console.WriteLine($"{ ninja.Name } | Swiftattack while resting -> waking up to attack!");
+            ninja.ActionQueue.Add(() => ninja.CurrentWeapon.SwiftAttack());
             Wake();
         }
 
         public void Rest()
         {
-            Console.WriteLine("Resting already.");
+            Console.WriteLine($"{ ninja.Name } | Resting already.");
         }
 
         public void Wake()
         {
-            ninja.Wake();
+            Console.WriteLine($"{ ninja.Name } | Standby");
+            ninja.State = new StandbyState(ninja);
         }
 
         public void DeadlyAttack()
         {
-            Console.WriteLine("Cannot DeadlyAttack while resting!");
+            Console.WriteLine($"{ ninja.Name } | Cannot DeadlyAttack while resting!");
         }
     }
 }

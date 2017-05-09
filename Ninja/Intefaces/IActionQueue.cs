@@ -9,7 +9,7 @@ namespace Ninja.Intefaces
     public interface IActionQueue
     {
         void Add(Action action);
-        void Execute();
+        void ExecuteActions();
         bool ContainsActions();
     }
 }

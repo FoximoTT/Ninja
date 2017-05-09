@@ -3,10 +3,6 @@ using Ninja.Model.Weapon;
 using Ninja.Queue;
 using Ninja.State;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ninja.Model
 {
@@ -14,7 +10,8 @@ namespace Ninja.Model
     {
         private IWeapon currentWeapon;
         private IState state;
-        public IActionQueue actionQueue;
+        private string name;
+        private IActionQueue actionQueue;
 
         public IWeapon CurrentWeapon
         {
@@ -28,20 +25,36 @@ namespace Ninja.Model
             set { actionQueue = value; }
         }
 
-        //default superninja instantiation
-        public MasterNinja()
+        public string Name
         {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public IState State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+
+        //default superninja instantiation
+        public MasterNinja(string name)
+        {
+            Name = name;
             actionQueue = new ActionQueue();
-            Wake();
+            this.state = new StandbyState(this);
             ChangeWeapon(new Fists());
+            Console.WriteLine($"Ninja { name } intialized.");
         }
 
         // in case of ninja promotion, preserving base ninja properties
-        public MasterNinja(IWeapon weapon)
+        public MasterNinja(IWeapon weapon, IState state, string name, IActionQueue queue)
         {
-            actionQueue = new ActionQueue();
-            Wake();
+            Name = name;
+            actionQueue = queue;
+            this.state = state;
             ChangeWeapon(weapon);
+            Console.WriteLine($"Ninja { name } intialized.");
         }
 
         public void ChangeWeapon(IWeapon weapon)
@@ -66,23 +79,12 @@ namespace Ninja.Model
 
         public void Rest()
         {
-            Console.WriteLine("Resting");
-            state = new RestState(this);
+            state.Rest();
         }
 
         public void Wake()
         {
-            Console.WriteLine("Standby");
-            state = new StandbyState(this);
-            ProcessActionQueue();
-        }
-
-        private void ProcessActionQueue()
-        {
-            while (ActionQueue.ContainsActions())
-            {
-                ActionQueue.Execute();
-            }
+            state.Rest();
         }
     }
 }

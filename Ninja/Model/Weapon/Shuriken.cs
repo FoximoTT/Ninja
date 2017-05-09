@@ -7,17 +7,17 @@ namespace Ninja.Model.Weapon
     {
         public void DeliberateAttack()
         {
-            Console.WriteLine("Shuriken - DeliberateAttack");
+            Console.WriteLine("Shuriken -> DeliberateAttack");
         }
 
         public void SwiftAttack()
         {
-            Console.WriteLine("Shuriken - SwiftAttack");
+            Console.WriteLine("Shuriken -> SwiftAttack");
         }
 
         public void DeadlyAttack()
         {
-            Console.WriteLine("Shuriken - DeadlyAttack");
+            Console.WriteLine("Shuriken -> DeadlyAttack");
         }
     }
 }

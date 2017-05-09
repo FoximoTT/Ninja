@@ -10,7 +10,7 @@ namespace Ninja.Intefaces
     {
         // none of methods below will be used most likely
 
-        void EnterState(IState state);
-        void ExitState();
+        void Rest();
+        void Wake();
     }
 }

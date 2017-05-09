@@ -22,15 +22,18 @@ namespace Ninja.Queue
             ActionsFIFO.Enqueue(action);
         }
 
-        public void Execute()
-        {
-            var action = ActionsFIFO.Dequeue();
-            action();
-        }
-
         public bool ContainsActions()
         {
             return ActionsFIFO.Count > 0;
+        }
+
+        public void ExecuteActions()
+        {
+            while (ActionsFIFO.Count > 0)
+            {
+                var action = ActionsFIFO.Dequeue();
+                action();
+            }
         }
     }
 }
