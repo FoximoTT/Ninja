@@ -28,7 +28,11 @@ namespace Ninja.State
         public void SwiftAttack()
         {
             Console.WriteLine($"{ ninja.Name } | Swiftattack while resting -> waking up to attack!");
-            ninja.ActionQueue.Add(() => ninja.CurrentWeapon.SwiftAttack());
+            ninja.ActionQueue.Add(() =>
+            {
+                Console.Write($"{ ninja.Name } | ");
+                ninja.CurrentWeapon.SwiftAttack();
+            });
             Wake();
         }
 
