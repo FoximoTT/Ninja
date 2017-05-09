@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Ninja.Intefaces
 {
-    interface ISuperWeapon : IWeapon
+    public interface IActionQueue
     {
-        void SuperAttack();
+        void Add(Action action);
+        void Execute();
+        bool ContainsActions();
     }
 }

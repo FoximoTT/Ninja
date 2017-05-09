@@ -2,12 +2,11 @@
 
 namespace Ninja.Intefaces
 {
-    public interface IWeapon
+    /// <summary>
+    /// Implements IAdvancedCombat interface since all weapons can execute all kinds of attacks
+    /// which are restriced just by character class executing it (i.e. ninja or masterninja)
+    /// </summary>
+    public interface IWeapon : IAdvancedCombat
     {
-        void DeliberateAttack();
-        void SwiftAttack();
-
-        // can be since since usage of this class is covered by definition of a INinja or ISuperNinja
-        void SuperAttack();
     }
 }

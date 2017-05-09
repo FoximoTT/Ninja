@@ -28,8 +28,6 @@ namespace Ninja.State
             throw new NotImplementedException();
         }
 
-        // INinja implementation
-        // ---------------------------------------
         public void ChangeWeapon(IWeapon weapon)
         {
             ninja.CurrentWeapon = weapon;
@@ -47,7 +45,7 @@ namespace Ninja.State
 
         public void Rest()
         {
-
+            ninja.Rest();
         }
 
         public void Wake()
@@ -55,18 +53,9 @@ namespace Ninja.State
             Console.WriteLine("Standby is active already.");
         }
 
-        // absolutely useless in here, gotta be implemented tho
-        public IWeapon CurrentWeapon
+        public void DeadlyAttack()
         {
-            get;
-            set;
-        }
-
-        // ISuperNinja implementation
-        // ---------------------------------------
-        public void SuperAttack()
-        {
-            ninja.CurrentWeapon.SuperAttack();
+            ninja.CurrentWeapon.DeadlyAttack();
         }
 
     }

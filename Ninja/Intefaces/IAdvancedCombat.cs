@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Ninja.Intefaces
 {
-    public interface IState : IAction, ICombat, IAdvancedCombat
+    public interface IAdvancedCombat : ICombat
     {
-        void EnterState(IState state);
-        void ExitState();
+        void DeadlyAttack();
     }
 }

@@ -1,12 +1,16 @@
-﻿using System;
-using Ninja.Intefaces;
+﻿using Ninja.Intefaces;
 using Ninja.Model.Weapon;
-using Ninja.State;
 using Ninja.Queue;
+using Ninja.State;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Ninja.Model
 {
-    public class Ninja : INinja
+    public class MasterNinja : IMasterNinja
     {
         private IWeapon currentWeapon;
         private IState state;
@@ -24,11 +28,20 @@ namespace Ninja.Model
             set { actionQueue = value; }
         }
 
-        public Ninja()
+        //default superninja instantiation
+        public MasterNinja()
         {
             actionQueue = new ActionQueue();
             Wake();
             ChangeWeapon(new Fists());
+        }
+
+        // in case of ninja promotion, preserving base ninja properties
+        public MasterNinja(IWeapon weapon)
+        {
+            actionQueue = new ActionQueue();
+            Wake();
+            ChangeWeapon(weapon);
         }
 
         public void ChangeWeapon(IWeapon weapon)
@@ -44,6 +57,11 @@ namespace Ninja.Model
         public void SwiftAttack()
         {
             state.SwiftAttack();
+        }
+
+        public void DeadlyAttack()
+        {
+            state.DeadlyAttack();
         }
 
         public void Rest()

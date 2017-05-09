@@ -28,8 +28,6 @@ namespace Ninja.State
             throw new NotImplementedException();
         }
 
-        // INinja implementation
-        // ---------------------------------------
         public void ChangeWeapon(IWeapon weapon)
         {
             Console.WriteLine("Cannot ChangeWeapon while resting!");
@@ -42,7 +40,9 @@ namespace Ninja.State
 
         public void SwiftAttack()
         {
-            ninja.CurrentWeapon.SwiftAttack();
+            Console.WriteLine("Swiftattack while resting -> waking up to attack!");
+            ninja.ActionQueue.Add(() => ninja.SwiftAttack());
+            Wake();
         }
 
         public void Rest()
@@ -52,21 +52,12 @@ namespace Ninja.State
 
         public void Wake()
         {
-
+            ninja.Wake();
         }
 
-        // absolutely useless in here, gotta be implemented tho
-        public IWeapon CurrentWeapon
+        public void DeadlyAttack()
         {
-            get;
-            set;
-        }
-
-        // ISuperNinja implementation
-        // ---------------------------------------
-        public void SuperAttack()
-        {
-            Console.WriteLine("Cannot SuperAttack while resting!");
+            Console.WriteLine("Cannot DeadlyAttack while resting!");
         }
     }
 }

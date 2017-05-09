@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Ninja.Queue;
+using System;
 
 namespace Ninja.Intefaces
 {
-    public interface INinja
+    public interface INinja : IAction, ICombat
     {
         IWeapon CurrentWeapon { get; set; }
-
-        void ChangeWeapon(IWeapon weapon);
-        void DeliberateAttack();
-        void SwiftAttack();
+        IActionQueue ActionQueue { get; set; }
 
         void Rest();
         void Wake();

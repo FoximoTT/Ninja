@@ -18,17 +18,17 @@ namespace Ninja
             ninja.DeliberateAttack();
             ninja.SwiftAttack();
 
-            ISuperNinja superNinja = new Model.SuperNinja();
-            superNinja.SuperAttack();
+            IMasterNinja superNinja = new Model.MasterNinja();
+            superNinja.DeadlyAttack();
             superNinja.ChangeWeapon(new Katana());
-            superNinja.SuperAttack();
+            superNinja.DeadlyAttack();
 
-            Console.WriteLine($"\n SuperAttack test");
+            Console.WriteLine($"\n DeadlyAttack test");
             superNinja.Rest();
-            superNinja.SuperAttack();
+            superNinja.DeadlyAttack();
             superNinja.SwiftAttack();
             superNinja.Wake();
-            superNinja.SuperAttack();
+            superNinja.DeadlyAttack();
         }
     }
 }
