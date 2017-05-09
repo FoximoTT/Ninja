@@ -23,7 +23,8 @@ namespace Ninja
             superNinja.ChangeWeapon(new Katana());
             superNinja.DeadlyAttack();
 
-            Console.WriteLine($"\n DeadlyAttack test");
+            Console.WriteLine("");
+            Console.WriteLine("DeadlyAttack test");
             superNinja.Rest();
             superNinja.DeadlyAttack();
             superNinja.SwiftAttack();

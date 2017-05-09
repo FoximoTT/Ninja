@@ -18,11 +18,14 @@ namespace Ninja.State
 
         // IState implementation
         // ---------------------------------------
+
+        //// may be a better way of implementing states than now...?
         public void EnterState(IState state)
         {
             throw new NotImplementedException();
         }
 
+        //// may be a better way of implementing states than now...?
         public void ExitState()
         {
             throw new NotImplementedException();
