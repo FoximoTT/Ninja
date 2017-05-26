@@ -11,5 +11,9 @@ namespace Ninja.Intefaces
     public interface IAction
     {
         void ChangeWeapon(IWeapon weapon);
+
+
+        void Rest();
+        void Wake();
     }
 }

@@ -21,10 +21,10 @@ namespace Ninja.State
             ninja.CurrentWeapon = weapon;
         }
 
-        public void DeliberateAttack()
+        public void HeavyAttack()
         {
             Console.Write($"{ ninja.Name } | ");
-            ninja.CurrentWeapon.DeliberateAttack();
+            ninja.CurrentWeapon.HeavyAttack();
         }
 
         public void SwiftAttack()

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.0.0
-MinimumVisualStudioVersion = 10.0.0.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninja", "Ninja\Ninja.csproj", "{DBC69AF4-640D-4ED9-A114-CC2D27F257FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaTests", "NinjaTests\NinjaTests.csproj", "{8304F694-A55C-496C-9BF7-0087B73A68DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DBC69AF4-640D-4ED9-A114-CC2D27F257FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBC69AF4-640D-4ED9-A114-CC2D27F257FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBC69AF4-640D-4ED9-A114-CC2D27F257FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8304F694-A55C-496C-9BF7-0087B73A68DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8304F694-A55C-496C-9BF7-0087B73A68DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8304F694-A55C-496C-9BF7-0087B73A68DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8304F694-A55C-496C-9BF7-0087B73A68DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

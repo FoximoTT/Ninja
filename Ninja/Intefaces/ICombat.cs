@@ -8,7 +8,7 @@ namespace Ninja.Intefaces
 {
     public interface ICombat
     {
-        void DeliberateAttack();
+        void HeavyAttack();
         void SwiftAttack();
     }
 }

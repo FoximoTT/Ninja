@@ -20,9 +20,9 @@ namespace Ninja.State
             Console.WriteLine($"{ ninja.Name } | Cannot ChangeWeapon while resting!");
         }
 
-        public void DeliberateAttack()
+        public void HeavyAttack()
         {
-            Console.WriteLine($"{ ninja.Name } | Cannot DeliberateAttack while resting!");
+            Console.WriteLine($"{ ninja.Name } | Cannot HeavyAttack while resting!");
         }
 
         public void SwiftAttack()

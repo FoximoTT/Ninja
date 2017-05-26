@@ -5,9 +5,9 @@ namespace Ninja.Model.Weapon
 {
     public class Fists : IWeapon
     {
-        public void DeliberateAttack()
+        public void HeavyAttack()
         {
-            Console.WriteLine("Fists -> DeliberateAttack");
+            Console.WriteLine("Fists -> HeavyAttack");
         }
 
         public void SwiftAttack()

@@ -9,8 +9,5 @@ namespace Ninja.Intefaces
         IWeapon CurrentWeapon { get; set; }
         IActionQueue ActionQueue { get; set; }
         IState State { get; set; }
-
-        void Rest();
-        void Wake();
     }
 }

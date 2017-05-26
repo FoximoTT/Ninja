@@ -11,11 +11,11 @@ namespace Ninja
             INinja ninja = new Model.Ninja("Akeno");
 
             ninja.ChangeWeapon(new Katana());
-            ninja.DeliberateAttack();
+            ninja.HeavyAttack();
             ninja.SwiftAttack();
 
             ninja.ChangeWeapon(new Shuriken());
-            ninja.DeliberateAttack();
+            ninja.HeavyAttack();
             ninja.SwiftAttack();
 
             Console.WriteLine();

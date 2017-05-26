@@ -51,9 +51,9 @@ namespace Ninja.Model
             state.ChangeWeapon(weapon);
         }
 
-        public void DeliberateAttack()
+        public void HeavyAttack()
         {
-            state.DeliberateAttack();
+            state.HeavyAttack();
         }
 
         public void SwiftAttack()

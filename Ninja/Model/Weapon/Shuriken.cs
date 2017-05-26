@@ -5,9 +5,9 @@ namespace Ninja.Model.Weapon
 {
     public class Shuriken : IWeapon
     {
-        public void DeliberateAttack()
+        public void HeavyAttack()
         {
-            Console.WriteLine("Shuriken -> DeliberateAttack");
+            Console.WriteLine("Shuriken -> HeavyAttack");
         }
 
         public void SwiftAttack()
